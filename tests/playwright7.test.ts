@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test';
 
+// On peut regrouper plusieurs tests et leur donner des instructions communes afin d'éviter les déplications
+// de code (dans cet exemple, nos 2 tests ont pour point d'entrée la page d'accueil de Steam, cette partie du 
+// code a donc été refactorisée)
+
 test.describe('Steam', () => {
     // Partie du code qui sera executée au début de chaque test
     test.beforeEach( async({page}) => {
         await page.goto('https://store.steampowered.com/') 
-        await page.pause()
         // On vérifie que la page a le titre 'Welcome to Steam'
         await expect(page).toHaveTitle('Welcome to Steam')
     })
 
-    test('Redirect to "Free to play games" page from home page on click on button', async({page}) => {
+    test('Go to "Free to play games" page from home page', async({page}) => {
         // On attend que le bloc d'informations sur les cookies s'affiche
         const expectCookieDiv = await expect(page.locator('#cookiePrefPopup')).toBeVisible()
         // On récupère le bouton qui nous permet de les refuser...
@@ -25,4 +28,35 @@ test.describe('Steam', () => {
         // On s'assure que l'on a bien changé de page en vérifiant le titre.
         await expect(page).toHaveTitle(/Free to play games/i)
     })
+
+    test('Look for "The last of us" game', async ({ page }) => {
+
+            await page.getByPlaceholder('search').click();
+    await page.getByPlaceholder('search').fill('the last of us');
+    await page.getByPlaceholder('search').press('Enter');
+    await page.getByRole('link', { name: 'The Last of Us™ Part I 28 mars 2023 59,99€' }).click();
+    await page.locator('#ageDay').selectOption('4');
+    await page.locator('#ageMonth').selectOption('June');
+    await page.locator('#ageYear').selectOption('2001');
+    await page.getByRole('link', { name: 'Voir la page' }).click();
+        // const searchBar = page.getByPlaceholder('search')
+        // await searchBar.click()
+        // await searchBar.fill('The last of us')
+        // await searchBar.press('Enter')
+        // await page.getByRole('link', { name: 'The Last of Us™ Part I 28 Mar, 2023 59,99€' }).click();
+        // await page.locator('#ageDay').selectOption('4');
+        // await page.locator('#ageMonth').selectOption('June');
+        // await page.locator('#ageYear').selectOption('2000');
+        // await page.getByRole('link', { name: 'View page' }).click();
+        // await expect(page).toHaveTitle(/the last of us/i);
+    })
+
+    // await page.getByPlaceholder('rechercher').click();
+    // await page.getByPlaceholder('rechercher').fill('the last of us');
+    // await page.getByPlaceholder('rechercher').press('Enter');
+    // await page.getByRole('link', { name: 'The Last of Us™ Part I 28 mars 2023 59,99€' }).click();
+    // await page.locator('#ageDay').selectOption('4');
+    // await page.locator('#ageMonth').selectOption('June');
+    // await page.locator('#ageYear').selectOption('2001');
+    // await page.getByRole('link', { name: 'Voir la page' }).click();
 })
