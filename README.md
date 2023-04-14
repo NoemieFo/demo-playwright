@@ -18,9 +18,8 @@ Si vous souhaitez lancer les tests sur un ou des navigateurs particuliers, vous 
 
 #### Installer playwright : 
 ```npm init playwright@latest```
-
-- [Guide d'installation en ligne de commande](https://playwright.dev/docs/intro)
-- [Guide d'installation grâce à l'extension vs code](https://playwright.dev/docs/getting-started-vscode)
+- [Guide d'installation en ligne de commande](https://playwright.dev/docs/intro#installing-playwright)
+- [Guide d'installation grâce à l'extension VSCode](https://playwright.dev/docs/getting-started-vscode#installation)
 
 #### Lancer les tests : 
 ```npx playwright test [--headed]```
