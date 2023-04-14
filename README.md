@@ -14,7 +14,10 @@ Si vous souhaitez lancer un seul test, ajouter ```.only``` avant de le lancer.
 
 Vous pouvez également modifier le fichier de configuration pour spécifier sur quels navigateurs exécuter vos tests (entre autres).
 
-## Commandes de base
+## Commandes de base (node)
+
+Installer playwright : 
+```npm init playwright@latest```
 
 Lancer les tests : 
 ```npx playwright test [--headed]```
@@ -31,3 +34,8 @@ Lancer les tests en mode debug :
 Auto-générer les tests avec Codegen :
 ```npx playwright codegen```
 
+## Liens utiles
+Documentation Playwright : playwright.dev
+Playwright sur Github : microsoft/playwright
+Vidéo de présentation de Playwright au DevFest Nantes 2022 : t.ly/86Q3
+Extension VSCode : t.ly/9UGv
