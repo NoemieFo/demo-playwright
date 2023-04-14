@@ -32,7 +32,7 @@ test.describe("Steam", () => {
   });
 
   // Code auto-généré grâce à codegen
-  test.only('Look for "The last of us" game', async ({ page }) => {
+  test('Look for "The last of us" game', async ({ page }) => {
     // 1. Sur la page d’accueil de Steam, rechercher “The last of us” (valider la saisie avec “Entrée”)
     const searchBar = page.getByPlaceholder("search");
     await searchBar.click();
