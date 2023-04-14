@@ -1,6 +1,6 @@
 # demo-playwright
 
-Retrouvez le code produit suite à la réalisation d'une vidéo de veille dans le cadre du MS2D de l'ENI.
+Retrouvez le code de la réalisation d'une vidéo de veille dans le cadre du MS2D de l'ENI.
 
 ## Utilisation
 
@@ -12,7 +12,7 @@ Si vous souhaitez lancer un seul test, ajouter ```.only``` avant de le lancer.
  test.only('Look for "The last of us" game', async ({ page }) => {
 ```
 
-Vous pouvez également modifier le fichier de configuration pour spécifier sur quels navigateurs exécuter vos tests (entre autres).
+Si vous souhaitez lancer les tests sur un ou des navigateurs particuliers, vous pouvez modifier le fichier de configuration du projet.
 
 ## Commandes de base (node)
 
