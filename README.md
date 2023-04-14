@@ -12,7 +12,7 @@ Si vous souhaitez lancer un seul test, ajouter ```.only``` avant de le lancer.
  test.only('Look for "The last of us" game', async ({ page }) => {
 ```
 
-Vous pouvez également modifier le fichier de configuration pour spécifier sur quels navigateurs exécuter vos tests par exemple.
+Vous pouvez également modifier le fichier de configuration pour spécifier sur quels navigateurs exécuter vos tests (entre autres).
 
 ## Commandes de base
 
