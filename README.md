@@ -16,22 +16,25 @@ Si vous souhaitez lancer les tests sur un ou des navigateurs particuliers, vous 
 
 ## Commandes de base (node)
 
-Installer playwright : 
+### Installer playwright : 
 ```npm init playwright@latest```
 
-Lancer les tests : 
+[Guide d'installation en ligne de commande](https://playwright.dev/docs/intro)
+[Guide d'installation grâce à l'extension vs code](https://playwright.dev/docs/getting-started-vscode)
+
+### Lancer les tests : 
 ```npx playwright test [--headed]```
 
-Lancer les tests uniquement sur Desktop Chrome :
+### Lancer les tests uniquement sur Desktop Chrome :
 ```npx playwright test --project=chromium```
 
-Lancer les tests d'un fichier spécifique :
+### Lancer les tests d'un fichier spécifique :
 ```npx playwright test example```
 
-Lancer les tests en mode debug :
+### Lancer les tests en mode debug :
 ```npx playwright test --debug```
 
-Auto-générer les tests avec Codegen :
+### Auto-générer les tests avec Codegen :
 ```npx playwright codegen```
 
 ## Liens utiles
