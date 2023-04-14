@@ -5,11 +5,19 @@ test("Steam", async ({ page }) => {
   // On vérifie que la page a le titre 'Welcome to Steam'
   await expect(page).toHaveTitle("Welcome to Steam");
 
+  // Validation/rejet des cookies :
+  // On attend que le bloc d'informations sur les cookies s'affiche
+  const expectCookieDiv = await expect(
+    page.locator("#cookiePrefPopup")
+  ).toBeVisible();
+  // On récupère le bouton qui nous permet de les refuser...
+  const confirmCookiesButton = await page.getByText("Reject All");
+  // ...et on clique dessus
+  await confirmCookiesButton.click();
+
   // On récupère le premier élément de la page qui contient le texte "free to play".
   // L'utilisation d'une expression régulière nous permet d'effectuer la recherche sans tenir compte de la casse.
   const freeToPlayLink = await page.getByText(/free to play/i).first();
-  // On ajoute une pause pour que l'exécution s'interrompe si on en a besoin.
-  await page.pause();
   // On clique sur l'élément que l'on a récupéré
   await freeToPlayLink.click();
   await page.pause();
