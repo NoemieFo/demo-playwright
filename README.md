@@ -35,7 +35,7 @@ Auto-générer les tests avec Codegen :
 ```npx playwright codegen```
 
 ## Liens utiles
-- Documentation Playwright : playwright.dev
-- Playwright sur Github : microsoft/playwright
-- Vidéo de présentation de Playwright au DevFest Nantes 2022 : t.ly/86Q3
-- Extension VSCode : t.ly/9UGv
+- [Documentation Playwright](https://playwright.dev) 
+- [Playwright sur Github](https://github.com/microsoft/playwright) 
+- [Vidéo de présentation de Playwright au DevFest Nantes 2022](https://www.youtube.com/watch?v=meiA4TPltoI)
+- [Extension VSCode](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
