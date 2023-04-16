@@ -33,6 +33,7 @@ test.describe("Steam", () => {
     await expect(page).toHaveTitle(/Free to play games/i);
   });
 
+  // Code écrit à la main, à l'aide de la documentation et du pick locator
   test('Look for "The last of us" game', async ({ page }) => {
     // 1. Sur la page d’accueil de Steam, rechercher “The last of us” (valider la saisie avec “Entrée”)
     const searchBar = page.getByPlaceholder("search");
@@ -42,7 +43,7 @@ test.describe("Steam", () => {
 
     // 2. Sélectionner le jeu dans la liste
     await page
-      .getByRole("link", { name: "The Last of Us™ Part I 28 mars 2023 59,99€" })
+      .getByRole("link", { name: "The Last of Us™ Part I 28 Mar, 2023 59,99€" })
       .click();
   });
 });
